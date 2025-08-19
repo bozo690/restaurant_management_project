@@ -1,4 +1,4 @@
-{% load static %}<!DOCTYPE html>
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -10,11 +10,13 @@
     <body>
         <header>
             <nav>
-                <a href="/" class="nav-logo"> Restaurant Logo </a>
+                <a href="{% url 'home' %}" class="nav-logo"> 
+                    <img src="{% static 'home/logo.png' %}" alt="Restaurant Name Logo">
+                </a>
                 <ul>
-                    <li><a href="#"> Home</a></li>
-                    <li><a href="#"> Menu</a></li>
-                    <li><a href="#"> Contact</a></li>
+                    <li><a href="{% url 'home' %}"> Home</a></li>
+                    <li><a href="{% url 'menu' %}"> Menu</a></li>
+                    <li><a href="{% url 'contact' %}"> Contact</a></li>
                 </ul>
             </nav>
         
