@@ -9,12 +9,21 @@
     </head>
     <body>
         <header>
+            <nav>
+                <a href="/" class="nav-logo"> Restaurant Logo </a>
+                <ul>
+                    <li><a href="#"> Home</a></li>
+                    <li><a href="#"> Menu</a></li>
+                    <li><a href="#"> Contact</a></li>
+                </ul>
+            </nav>
         
         </header>
         <main>
             {% block content %}
             {% endblock %}
         </main>
+        
         <footer>
             <p>&copy; {% now "Y" %} Your Restaunrant Name. All rights reserved.</p>
         </footer>
