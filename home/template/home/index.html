@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -15,10 +14,10 @@
                     <img src="{% static 'home/logo.png' %}" alt="Restaurant Name Logo">
                 </a>
                 <ul>
-                    <li><a href="{% url 'home' %}"> Home</a></li>
-                    <li><a href="#"> Menu</a></li>
-                    <li><a href="{% url 'reservations' %}"> Reservations </a></li>
-                    <li><a href="{% url 'contact' %}"> Contact</a></li>
+                    <li><a href="{% url 'home' %}"{% if active_page=='home' %} class="active"{% endif %}> home </a></li>
+                    <li><a href="#"{% if active_page=='Menu' %} class="active"{% endif %}> Menu </a></li>
+                    <li><a href="{% url 'reservations' %}"{% if active_page=='home' %} class="active"{% endif %}> reservations </a></li>
+                    <li><a href="{% url 'contact' %}"{% if active_page=='contact' %} class="active"{% endif %}> contact </a></li>
                 </ul>
             </nav>
         
@@ -30,6 +29,7 @@
         
         <footer>
             <p>&copy; {% now "Y" %} Your Restaunrant Name. All rights reserved.</p>
+            <p class="opening hours"> Mon-Fri: 11am-9pm | Sat-Sun: 10am-10pm</p>
         </footer>
     </body>
 </html>
