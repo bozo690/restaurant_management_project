@@ -20,6 +20,10 @@
                     <li><a href="{% url 'contact' %}"{% if active_page=='contact' %} class="active"{% endif %}> contact </a></li>
                     <li><a href="{% url 'feedback' %}"{% if active_page=='feedback' %} class="active"{% endif %}> feedback</a></li>
                 </ul>
+                <form action='#' method="GET" class="nav-search-form">
+                    <input type="text" name="q" placeholder="Search menu...">
+                    <button type="submit">Go</button>
+                </form>
             </nav>
         
         </header>
