@@ -1,5 +1,6 @@
 import requests
 from django.shortcuts import render
+from django.conf import settings
 
 def home(request)
     """
@@ -7,7 +8,7 @@ def home(request)
     This function fetches menu data from your API and passes it to the template.
     """
 
-    api_url="http://127.0.0.1/api/menu/"
+    api_url='http://127.0.0.1:8000/api/menu/'
 
     menu_data=[]
     error_message=None
@@ -27,6 +28,7 @@ def home(request)
     context={
         'menu_items':menu_data,
         'error_message':error_message,
+        'restaurant_name': settings.RESTAURANT_NAME,
     }
 
     return render(request, 'home/index.html', context)
